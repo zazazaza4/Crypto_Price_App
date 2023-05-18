@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-      "baseUrl": ".",
+      "baseUrl": "src",
       "paths": {
         "components/*": ["./components/*"],
-        "pages/*": ["./pages/"],
+        "pages/*": ["./pages/*"],
         "helpers/*": ["./helpers/*"],
         "stores/*": ["./stores/*"]
       }
