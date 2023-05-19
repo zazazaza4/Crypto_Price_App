@@ -21,12 +21,11 @@ export const useHomeStore = create((set) => ({
       );
 
       const coins = res.data.coins.map((coin) => {
-        const { name, large, id, price_btc } = coin;
+        const { name, large, id } = coin;
         return {
           name,
-          large,
+          image: large,
           id,
-          price_btc,
         };
       });
       set({ coins });
@@ -48,8 +47,8 @@ export const useHomeStore = create((set) => ({
     const coins = res.data.coins.map((coin) => {
       const { name, large, id, price_btc } = coin.item;
 
-      const priceUsd = (price_btc * btcPrice).toFixed(2);
-      const priceBtc = price_btc.toFixed(2);
+      const priceUsd = (price_btc * btcPrice).toFixed(6);
+      const priceBtc = price_btc.toFixed(6);
 
       return {
         id,
