@@ -1,24 +1,34 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useHomeStore } from "../stores";
+
+import { useHomeStore } from "stores";
+import { Header, ListItem } from "components";
 
 export const Home = () => {
-  const store = useHomeStore();
+  const { fetchCoins, query, setQuery, coins } = useHomeStore();
 
   useEffect(() => {
-    store.fetchCoins();
-  }, []);
+    fetchCoins();
+  }, [fetchCoins]);
 
   return (
     <div>
-      <input type="text" value={store.query} onChange={store.setQuery} />
-      {store.coins.map((coin) => {
-        return (
-          <div key={coin.id}>
-            <Link to={`/${coin.id}`}>{coin.name}</Link>
+      <Header />
+      <header className="home-search">
+        <div className="width">
+          <h2>Search a coin</h2>
+          <input type="text" value={query} onChange={setQuery} />
+        </div>
+      </header>
+      <div className="home-crypto">
+        <div className="width">
+          <h2>Trending coins</h2>
+          <div className="home-cryptos-list">
+            {coins.map((coin) => {
+              return <ListItem key={coin.id} coin={coin} />;
+            })}
           </div>
-        );
-      })}
+        </div>
+      </div>
     </div>
   );
 };
