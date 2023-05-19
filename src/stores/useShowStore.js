@@ -24,7 +24,6 @@ export const useShowStore = create((set) => ({
       };
     });
 
-    console.log(dataRes.data);
     set({ graphData });
     set({ data: dataRes.data });
   },
