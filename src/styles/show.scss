@@ -1,0 +1,47 @@
+.show {
+  &-header {
+    padding: 40px 0;
+    text-align: center;
+
+    img {
+      width: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 10px;
+    }
+  }
+
+  &-graph {
+    height: 200px;
+    width: 100%;
+  }
+
+  &-details {
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      color: #666;
+
+      h3 {
+        font-size: 16px;
+        color: #111;
+      }
+    }
+  }
+}
